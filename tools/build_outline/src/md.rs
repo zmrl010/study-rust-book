@@ -6,5 +6,5 @@ pub fn select_headings(text: String) {
     static ref RE: Regex = Regex::new(r"#{1,6} .+").unwrap();
   }
 
-  RE.captures_iter(text)
+  RE.find_iter(&text.as_str()).map(|m| m.as_str());
 }
