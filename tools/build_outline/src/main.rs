@@ -11,10 +11,10 @@ struct Args {
 
     /// path to output
     #[clap(short, long, value_parser)]
-    output: String
+    output: String,
 }
 
 fn main() {
     let args = Args::parse();
-    let contents = fs::read_to_string(args.source);
+    let _contents = fs::read_to_string(args.source);
 }

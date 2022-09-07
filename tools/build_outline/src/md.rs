@@ -1,10 +1,13 @@
 use regex::Regex;
 
-/// Narrow a string to just headings split by a blank line.
-pub fn select_headings(text: String) {
-  lazy_static! {
-    static ref RE: Regex = Regex::new(r"#{1,6} .+").unwrap();
-  }
+/// return headers found in markdown text
+pub fn select_headings(text: &str) -> String {
+    lazy_static! {
+        static ref RE: Regex = Regex::new(r"#{1,6} .+").unwrap();
+    }
 
-  RE.find_iter(&text.as_str()).map(|m| m.as_str());
+    return RE
+        .find_iter(text)
+        .map(|m| format!("{} \n", m.as_str()))
+        .collect::<String>();
 }
