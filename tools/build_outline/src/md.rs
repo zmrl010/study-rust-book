@@ -1,6 +1,6 @@
 use regex::Regex;
 
-/// return headings found in markdown text
+/// get headings in markdown text
 pub fn select_headings(text: &str) -> String {
     lazy_static! {
         static ref RE: Regex = Regex::new(r"#{1,6} .+").unwrap();
@@ -8,7 +8,7 @@ pub fn select_headings(text: &str) -> String {
 
     return RE
         .find_iter(text)
-        .map(|m| format!("{}\n", m.as_str()))
+        .map(|m| format!("{}\n\n", m.as_str()))
         .collect::<String>();
 }
 
