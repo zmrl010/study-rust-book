@@ -1,3 +1,6 @@
 [submodule "book"]
 	path = book
 	url = https://github.com/rust-lang/book.git
+[submodule "rust-by-example"]
+	path = rust-by-example
+	url = https://github.com/rust-lang/rust-by-example.git
