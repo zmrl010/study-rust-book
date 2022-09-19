@@ -18,9 +18,9 @@ mod tests {
 
     #[test]
     fn it_should_return_headings_separated_by_newline() {
-        let result = select_headings("# heading\nother text");
+        let result = select_headings("# heading\nother text\n## heading2");
 
-        assert_eq!(result.as_str(), "# heading\n")
+        assert_eq!(result.as_str(), "# heading\n## heading2")
     }
 
     #[test]
